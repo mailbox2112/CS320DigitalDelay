@@ -23,6 +23,7 @@
 								<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE=C5545.cmd"/>
 								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
 								<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
+								<listOptionValue builtIn="false" value="PRODUCTS="/>
 							</option>
 							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1024762093" name="Compiler version" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="4.4.1" valueType="string"/>
 							<targetPlatform id="com.ti.ccstudio.buildDefinitions.C5500_4.4.exe.targetPlatformDebug.1201812016" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.4.exe.targetPlatformDebug"/>
@@ -37,6 +38,9 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.DEBUGGING_MODEL.84341871" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.INCLUDE_PATH.1385971099" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c5545bp_software_01.01.00.00\source_code\c55xx_diagnostics\board\diag\common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c5545bp_software_01.01.00.00\source_code\c55xx_diagnostics\board\diag\audio_common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c5545bp_software_01.01.00.00\source_code\c55xx_diagnostics\board\diag\audio_test\audio_line_in_loopback_test\inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c55_csl_3.07\inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${PROJECT_LOC}/../../../audio_common&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${PROJECT_LOC}/../../../audio_test/audio_line_in_loopback_test/inc/&quot;"/>
