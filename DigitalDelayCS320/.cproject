@@ -38,6 +38,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.DEBUGGING_MODEL.84341871" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.INCLUDE_PATH.1385971099" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.C5500_4.4.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\workspace_v6_2\CS320DigitalDelay\DigitalDelayCS320&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c5545bp_software_01.01.00.00\source_code\c55xx_diagnostics\board\diag\common&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c5545bp_software_01.01.00.00\source_code\c55xx_diagnostics\board\diag\audio_common&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\c55_lp\c5545bp_software_01.01.00.00\source_code\c55xx_diagnostics\board\diag\audio_test\audio_line_in_loopback_test\inc&quot;"/>
@@ -82,7 +83,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="C5505.cmd|common/i2c_probe.c|common/evm66x_i2c.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="C5505.cmd|common/evm66x_i2c.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

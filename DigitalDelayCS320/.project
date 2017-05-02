@@ -26,19 +26,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>audio_common</name>
-			<type>2</type>
-			<locationURI>copy_PARENT/audio_common</locationURI>
-		</link>
-		<link>
 			<name>audio_line_in_loopback_test.c</name>
 			<type>1</type>
 			<locationURI>copy_PARENT/audio_test/audio_line_in_loopback_test/src/audio_line_in_loopback_test.c</locationURI>
-		</link>
-		<link>
-			<name>common</name>
-			<type>2</type>
-			<locationURI>copy_PARENT/common</locationURI>
 		</link>
 	</linkedResources>
 	<variableList>
