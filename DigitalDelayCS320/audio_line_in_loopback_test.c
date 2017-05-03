@@ -58,12 +58,12 @@ extern TEST_STATUS AIC3206_loop_linein(void *testArgs);
 TEST_STATUS AIC3206_loop_linein(void *testArgs) {
 	// Length of sample for delay is half a second. The number of samples required
 	// is sample rate (samples/second) * # seconds (second) = # samples
-	Int16 delaySampleLengthSeconds = 48000 * 0.5;
-	short delaySamplesLeft[24000];
-	//short delaySamplesRight[24000];
+	Int16 delaySampleLength = 14400;
+	Int16 delaySamplesLeft[14400];
+	double gain = 0.5;
 
 	// 16bit integers for putting audio data into
-	Int16 i, j, data1, data2;
+	Int16 i, data1, data2;
 
 	/* Configure AIC3206 */
 	AIC3206_write(0, 0x00);  // Select page 0
@@ -130,24 +130,26 @@ TEST_STATUS AIC3206_loop_linein(void *testArgs) {
 
 	// Loop audio out indefinitely
 	while (sw3Pressed != TRUE) {
-		for (i = 0; i < 10; i++) {
-			for (j = 0; j < delaySampleLengthSeconds; j++) {
-				/* Read 16-bit left channel Data */
-				I2S_readLeft(&data1);
+		for (i = 0; i < delaySampleLength; i++) {
+			// First, we read the data from the DACs
+			I2S_readLeft(&data1);
 
-				/* Read 16-bit right channel Data */
-				//I2S_readRight(&data2);
-				// Save the data from that half second increment
-				delaySamplesLeft[j] = data1;
-				//delaySamplesRight[i] = data2;
+			//I2S_readRight(&data2);
 
-				/* Write 16-bit left channel Data */
-				// Play each sample with the fade coefficient
-				I2S_writeLeft(data1 + (1 - .1 * i) * delaySamplesLeft[j]);
-
-				/* Write 16-bit right channel Data */
-				//I2S_writeRight(data2);
+			// Next, we output the data. First time we do this, the delay
+			// buffer is all zeros. Afterwards, it acts like a normal circular buffer with
+			// a delay of ~0.2s
+			if (i == 0) {
+				I2S_writeLeft((Int16)(data1 + gain * delaySamplesLeft[delaySampleLength-1]));
+			} else {
+				I2S_writeLeft((Int16)(data1 + gain * delaySamplesLeft[i]));
 			}
+
+			//(i == 0) ? I2S_writeRight((Int16)(data2 + gain * delaySamplesRight[i])) : I2S_writeRight((Int16)(data2 + gain * delaySamplesRight[i]));
+
+			// After we write the audio, save the samples into the buffer
+			delaySamplesLeft[i] = data1 + gain * delaySamplesLeft[i];
+			//delaySamplesRight[i] = data2;
 		}
 	}
 	I2S_close(hI2s);    // Disble I2S
